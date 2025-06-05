@@ -3,6 +3,7 @@
 front end to start
 
 go to directory on your local  ~/ArchitectureDiagrams/frontend/src
+npm install express cors body-parser
 npm start
 
 
@@ -10,6 +11,7 @@ Backend server to start
 
 go to directory on your local 
 ~/ArchitectureDiagrams/backend
+npm install express cors body-parser
 node server.js
 
 How to test
