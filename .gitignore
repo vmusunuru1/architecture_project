@@ -1,7 +1,7 @@
 # Ignore dependencies
 node_modules/
 .cache/
-frontend_temp/
+frontend/node_modules/
 backend/node_modules/
 *.log
 
