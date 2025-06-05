@@ -11,6 +11,5 @@ build/
 
 # OS / IDE / Tooling
 .DS_Store
-.env
 .vscode/
 
