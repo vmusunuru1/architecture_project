@@ -1,0 +1,16 @@
+# Ignore dependencies
+node_modules/
+.cache/
+frontend_temp/
+backend/node_modules/
+*.log
+
+# Ignore build outputs
+dist/
+build/
+
+# OS / IDE / Tooling
+.DS_Store
+.env
+.vscode/
+
