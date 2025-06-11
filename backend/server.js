@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const OpenAI = require('openai');
+const Stripe = require('stripe');
 
 const app = express();
 const port = 5000;
@@ -12,11 +13,15 @@ const port = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// ✅ NEW OpenAI INIT (v4+)
+// ✅ OpenAI setup
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// ✅ Stripe setup
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY); // Add this to .env
+
+// === OpenAI Route ===
 app.post('/generate', async (req, res) => {
   const { prompt } = req.body;
 
@@ -45,6 +50,24 @@ app.post('/generate', async (req, res) => {
   }
 });
 
+// === Stripe Payment Route ===
+app.post('/create-payment-intent', async (req, res) => {
+  const { amount } = req.body;
+
+  try {
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount, // Amount in cents (e.g., 500 = $5.00)
+      currency: 'usd',
+      payment_method_types: ['card'],
+    });
+
+    res.send({ clientSecret: paymentIntent.client_secret });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({ error: 'Payment Intent creation failed' });
+  }
+});
+// === Health check route ===
 app.get('/', (req, res) => {
   res.send('Backend is running');
 });

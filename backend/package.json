@@ -15,7 +15,8 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mermaid": "^11.6.0",
-    "openai": "^5.1.0"
+    "openai": "^5.1.0",
+    "stripe": "^18.2.1"
   },
   "description": ""
 }
