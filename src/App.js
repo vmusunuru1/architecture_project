@@ -4,6 +4,8 @@ import domtoimage from "dom-to-image-more";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./CheckoutForm";
+import { Analytics } from '@vercel/analytics/react';
+
 
 
 
@@ -388,6 +390,7 @@ Save Data to End`
 
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
       `}</style>
+      <Analytics />
     </div>
   );
 }
