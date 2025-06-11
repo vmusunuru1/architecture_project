@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import {
+  CardNumberElement,
+  CardExpiryElement,
+  CardCvcElement,
+  useStripe,
+  useElements,
+} from "@stripe/react-stripe-js";
 
 export default function CheckoutForm() {
   const stripe = useStripe();
@@ -33,9 +39,11 @@ export default function CheckoutForm() {
 
     const { clientSecret } = await res.json();
 
+    const card = elements.getElement(CardNumberElement);
+
     const result = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
-        card: elements.getElement(CardElement),
+        card,
         billing_details: {
           email: email || undefined,
           address: {
@@ -84,6 +92,23 @@ export default function CheckoutForm() {
 
   const sectionStyle = {
     marginBottom: "20px",
+  };
+
+  const elementStyle = {
+    padding: "10px",
+    border: "1px solid #ccc",
+    borderRadius: "6px",
+    marginBottom: "16px",
+  };
+
+  const stripeInputOptions = {
+    style: {
+      base: {
+        fontSize: "16px",
+        color: "#32325d",
+        "::placeholder": { color: "#aab7c4" },
+      },
+    },
   };
 
   return (
@@ -170,19 +195,19 @@ export default function CheckoutForm() {
       </div>
 
       <div style={sectionStyle}>
-        <label style={labelStyle}>Card Details</label>
-        <div style={{ padding: "10px", border: "1px solid #ccc", borderRadius: "6px" }}>
-          <CardElement
-            options={{
-              style: {
-                base: {
-                  fontSize: "16px",
-                  color: "#32325d",
-                  "::placeholder": { color: "#aab7c4" },
-                },
-              },
-            }}
-          />
+        <label style={labelStyle}>Card Number</label>
+        <div style={elementStyle}>
+          <CardNumberElement options={stripeInputOptions} />
+        </div>
+
+        <label style={labelStyle}>Expiration Date</label>
+        <div style={elementStyle}>
+          <CardExpiryElement options={stripeInputOptions} />
+        </div>
+
+        <label style={labelStyle}>CVC</label>
+        <div style={elementStyle}>
+          <CardCvcElement options={stripeInputOptions} />
         </div>
       </div>
 
