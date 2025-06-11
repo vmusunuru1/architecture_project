@@ -51,20 +51,33 @@ app.post('/generate', async (req, res) => {
 });
 
 // === Stripe Payment Route ===
-app.post('/create-payment-intent', async (req, res) => {
-  const { amount } = req.body;
-
+app.post("/create-payment-intent", async (req, res) => {
   try {
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount, // Amount in cents (e.g., 500 = $5.00)
-      currency: 'usd',
-      payment_method_types: ['card'],
-    });
+    const { amount, email, address } = req.body;
 
-    res.send({ clientSecret: paymentIntent.client_secret });
-  } catch (err) {
-    console.error(err);
-    res.status(500).send({ error: 'Payment Intent creation failed' });
+    if (!amount || isNaN(amount) || amount <= 0) {
+      return res.status(400).json({ error: "Invalid amount" });
+    }
+
+    const params = {
+      amount,
+      currency: "usd",
+      metadata: {
+        ...(email ? { email } : {}),
+        ...(address ? { address } : {}),
+      },
+    };
+
+    if (email) {
+      params.receipt_email = email;
+    }
+
+    const paymentIntent = await stripe.paymentIntents.create(params);
+
+    res.json({ clientSecret: paymentIntent.client_secret });
+  } catch (error) {
+    console.error("Stripe Payment Intent Error:", error.message);
+    res.status(500).json({ error: error.message });
   }
 });
 // === Health check route ===

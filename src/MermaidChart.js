@@ -3,7 +3,7 @@ import mermaid from "mermaid";
 
 mermaid.initialize({ startOnLoad: false });
 
-export default function MermaidChart({ chart, scale = 1 }) {
+export default function MermaidChart({ chart }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -15,14 +15,6 @@ export default function MermaidChart({ chart, scale = 1 }) {
       try {
         const { svg } = await mermaid.render(id, chart);
         containerRef.current.innerHTML = svg;
-
-        if (scale !== 1) {
-          const svgEl = containerRef.current.querySelector("svg");
-          if (svgEl) {
-            svgEl.style.transformOrigin = "0 0";
-            svgEl.style.transform = `scale(${scale})`;
-          }
-        }
       } catch (err) {
         console.error("❌ Mermaid render error:", err);
         containerRef.current.innerHTML = `<pre style="color:red;">Mermaid render error:\n${err.message}</pre>`;
@@ -30,7 +22,7 @@ export default function MermaidChart({ chart, scale = 1 }) {
     };
 
     renderMermaid();
-  }, [chart, scale]);
+  }, [chart]);
 
   return <div ref={containerRef} />;
 }
