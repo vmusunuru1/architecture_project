@@ -31,7 +31,7 @@ export default function CheckoutForm() {
 
     const cents = Math.round(parseFloat(amount) * 100);
 
-    const res = await fetch("http://localhost:5000/create-payment-intent", {
+   const res = await fetch("/api/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount: cents, email }),
