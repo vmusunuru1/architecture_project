@@ -1,0 +1,140 @@
+/* styles.css */
+
+/* Root variables for consistent colors and fonts */
+:root {
+  --primary-color: #4A90E2; /* bright blue */
+  --secondary-color: #50E3C2; /* mint teal */
+  --accent-color: #F5A623; /* warm orange */
+  --text-color: #222;
+  --background-gradient: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --border-radius: 16px;
+  --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --font-family: 'Poppins', sans-serif;
+  --transition-speed: 0.3s;
+}
+
+/* Global reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body, #root {
+  margin: 0;
+  font-family: var(--font-family);
+  background: black;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Container for your main content */
+.container {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 30px;
+  width: 100%;
+  max-width: 960px;
+  margin-top: 40px;
+  min-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  font-weight: 700;
+}
+
+/* Paragraphs */
+p {
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1em;
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* Buttons */
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 1px 24px;
+  font-size: 16px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  color: white;
+  background-color: var(--primary-color);
+  user-select: none;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Inputs, textarea, selects */
+input, textarea, select {
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  padding: 12px;
+  font-size: 16px;
+  font-family: var(--font-family);
+  width: 100%;
+  margin-bottom: 20px;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 6px var(--primary-color);
+}
+
+/* Scrollbar for container */
+.container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: rgba(74, 144, 226, 0.5);
+  border-radius: var(--border-radius);
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin-top: 20px;
+    min-height: auto;
+  }
+
+  button {
+    width: 100%;
+  }
+
+}
