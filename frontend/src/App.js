@@ -137,7 +137,7 @@ export default function App() {
     minHeight: "100vh",
     width: "100vw", // Ensure it spans full viewport width
     overflowX: "hidden", // Prevent horizontal scroll
-    backgroundColor: "#1a1a1a",
+    backgroundColor: "#f4f6f8",
     fontFamily: "'Poppins', sans-serif",
     color: "#fff",
     display: "flex",
@@ -179,20 +179,19 @@ export default function App() {
     </div>
   </div>
 </nav>
-      <div
-        style={{
-          marginTop: 24,
-          marginBottom: 24,
-          padding: 24,
-          backgroundColor: "rgba(255,255,255,0.95)",
-          borderRadius: 12,
-          textAlign: "center",
-          maxWidth: 960,
-          alignSelf: "center",
-          color: "#2f5252",
-        }}
-      >
-        <h1 style={{ fontSize: 32, margin: 0 }}>🧠 AI Diagram Generator</h1>
+    <div
+  style={{
+    margin: "40px auto",
+    padding: "40px 50px",
+    backgroundColor: "#ffffff",
+    borderRadius: 16,
+    textAlign: "center",
+    maxWidth: 800,
+    alignSelf: "center",
+    color: "#2f5252",
+  }}
+>
+        <h1 style={{ fontSize: 28, margin: 0 }}>🧠 AI Diagram Generator</h1>
         <div
   style={{
     maxWidth: 960,
