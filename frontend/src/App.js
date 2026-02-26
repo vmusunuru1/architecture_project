@@ -145,6 +145,40 @@ export default function App() {
     boxSizing: "border-box",
   }}
 >
+<nav
+  style={{
+    width: "100%",
+    backgroundColor: "#000",
+    borderBottom: "1px solid rgba(255,255,255,0.1)",
+  }}
+>
+  <div
+    style={{
+      maxWidth: 1100,
+      margin: "0 auto",
+      padding: "10px 16px",
+      display: "flex",
+      gap: 14,
+      flexWrap: "wrap",
+      alignItems: "center",
+      justifyContent: "space-between",
+    }}
+  >
+    <div style={{ fontWeight: 800 }}>
+      <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>
+        merm.cloud
+      </Link>
+    </div>
+
+    <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+      <Link to="/tutorial" style={{ color: "#fff", textDecoration: "none" }}>Tutorial</Link>
+      <Link to="/examples" style={{ color: "#fff", textDecoration: "none" }}>Examples</Link>
+      <Link to="/faq" style={{ color: "#fff", textDecoration: "none" }}>FAQ</Link>
+      <Link to="/about" style={{ color: "#fff", textDecoration: "none" }}>About</Link>
+      <Link to="/contact" style={{ color: "#fff", textDecoration: "none" }}>Contact</Link>
+    </div>
+  </div>
+</nav>
       <div
         style={{
           marginTop: 24,
