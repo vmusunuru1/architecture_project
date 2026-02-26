@@ -193,6 +193,126 @@ export default function App() {
         }}
       >
         <h1 style={{ fontSize: 32, margin: 0 }}>🧠 AI Diagram Generator</h1>
+        <div
+  style={{
+    maxWidth: 960,
+    margin: "0 auto",
+    backgroundColor: "#ffffff",
+    borderRadius: 12,
+    padding: 24,
+    marginBottom: 24,
+    color: "#333",
+    lineHeight: 1.7
+  }}
+>
+  <h2>What Is Mermaid Diagram Generator?</h2>
+
+  <p>
+    Mermaid Diagram Generator is a web-based tool that converts plain English descriptions
+    into structured diagrams using Mermaid.js syntax. Instead of manually drawing boxes,
+    arrows, and connections in traditional diagram tools, you simply describe your workflow
+    in text, and the diagram is generated instantly in your browser.
+  </p>
+
+  <p>
+    Mermaid is a popular text-based diagramming language used by developers,
+    architects, students, and technical writers. Because diagrams are written in
+    plain text, they can be version-controlled in Git repositories, reviewed in
+    pull requests, and maintained alongside documentation.
+  </p>
+
+  <h2>Why Use Mermaid Instead of Traditional Diagram Tools?</h2>
+
+  <p>
+    Traditional diagram tools require manual drawing and formatting, which can
+    become time-consuming and inconsistent. Mermaid diagrams are different —
+    they are defined entirely through structured text.
+  </p>
+
+  <ul>
+    <li>✔ Faster diagram creation</li>
+    <li>✔ Easy editing and updates</li>
+    <li>✔ Works in documentation platforms</li>
+    <li>✔ Compatible with Git and version control</li>
+    <li>✔ Lightweight and developer-friendly</li>
+  </ul>
+
+  <h2>How This Tool Works</h2>
+
+  <p>
+    Simply type a structured description such as:
+  </p>
+
+  <pre style={{ background: "#f4f6f8", padding: 12, borderRadius: 8 }}>
+{`User to WebApp
+WebApp to API and Database`}
+  </pre>
+
+  <p>
+    Click <strong>Generate</strong>, and the system automatically converts it
+    into Mermaid.js flowchart syntax and renders a clean diagram.
+  </p>
+
+  <p>
+    Everything runs directly in your browser — no installation, no login,
+    and no data storage required.
+  </p>
+
+  <h2>Who Is This Tool For?</h2>
+
+  <p>
+    This diagram generator is useful for:
+  </p>
+
+  <ul>
+    <li>Software engineers documenting system architecture</li>
+    <li>Students learning system design and workflows</li>
+    <li>Product managers explaining processes</li>
+    <li>DevOps engineers mapping infrastructure</li>
+    <li>Technical writers creating documentation diagrams</li>
+  </ul>
+
+  <h2>Types of Diagrams You Can Create</h2>
+
+  <p>
+    Mermaid supports many diagram types. With this tool, you can create:
+  </p>
+
+  <ul>
+    <li>Flowcharts</li>
+    <li>Sequence diagrams</li>
+    <li>State diagrams</li>
+    <li>Entity relationship diagrams</li>
+    <li>Class diagrams</li>
+  </ul>
+
+  <h2>Learn More</h2>
+
+  <p>
+    If you're new to Mermaid syntax, check out our{" "}
+    <a href="/tutorial">Mermaid Tutorial</a> to learn how to write diagrams
+    effectively.
+  </p>
+
+  <p>
+    You can also explore ready-made templates in our{" "}
+    <a href="/examples">Examples page</a> or browse common questions in the{" "}
+    <a href="/faq">FAQ section</a>.
+  </p>
+
+  <h2>Why We Built This Tool</h2>
+
+  <p>
+    Many developers prefer documentation that is simple, portable, and easy to
+    maintain. By combining natural language input with Mermaid.js rendering,
+    this generator makes it easier to translate ideas into diagrams quickly.
+  </p>
+
+  <p>
+    Whether you're sketching a quick workflow or documenting a full system,
+    this tool helps you focus on structure rather than formatting.
+  </p>
+</div>
 
         {/* Top Banner Ad */}
         <div style={{ marginTop: 16 }}>
