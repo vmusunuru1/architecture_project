@@ -15,3 +15,9 @@ build/
 
 .vercel
 backend/.env
+
+# Secrets
+.env
+**/.env
+.env.*
+**/.env.*
