@@ -9,6 +9,17 @@ const Code = ({ children }) => (
 export default function Tutorial() {
   return (
     <div className="card">
+      {/* Google AdSense: Place ad only on content-rich pages, not on legal/contact pages */}
+      <div style={{ margin: '24px 0', textAlign: 'center' }}>
+        <ins className="adsbygoogle"
+          style={{ display: 'block', minHeight: 90 }}
+          data-ad-client="ca-pub-4713365631308072"
+          data-ad-slot="1234567890"
+          data-ad-format="auto" />
+      </div>
+      <script>
+        {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+      </script>
       <h1>Mermaid Tutorial</h1>
       <p>
         Mermaid is a text-based diagramming language. You write a short block of
